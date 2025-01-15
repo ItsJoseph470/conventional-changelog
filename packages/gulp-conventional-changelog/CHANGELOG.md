@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/gulp-conventional-changelog-v4.0.0...gulp-conventional-changelog-v5.0.0) (2024-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199))
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* **git-semver-tags,conventional-recommended-bump:** gitSemverTags and conventionalRecommendedBump now return promises
+* **standard-changelog:** createIfMissing method now returns a promise
+
+### Features
+
+* drop node 16 support ([#1226](https://github.com/conventional-changelog/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/conventional-changelog/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199)) ([ba03ffc](https://github.com/conventional-changelog/conventional-changelog/commit/ba03ffc3c05e794db48b18a508f296d4d662a5d9))
+* **git-semver-tags,conventional-recommended-bump:** refactoring to use promises instead of callbacks ([#1112](https://github.com/conventional-changelog/conventional-changelog/issues/1112)) ([1697ecd](https://github.com/conventional-changelog/conventional-changelog/commit/1697ecdf4c2329732e612cc1bd3323e84f046f3a))
+* move from CommonJS to ESM ([#1144](https://github.com/conventional-changelog/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/conventional-changelog/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* **standard-changelog:** use promises ([#1111](https://github.com/conventional-changelog/conventional-changelog/issues/1111)) ([5015ab7](https://github.com/conventional-changelog/conventional-changelog/commit/5015ab71de7a3db9cbcbbabd0cc25502f1cd0109))
+
+## [4.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/gulp-conventional-changelog-v3.0.0...gulp-conventional-changelog-v4.0.0) (2023-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/conventional-changelog/conventional-changelog/issues/1085)) ([1bce036](https://github.com/conventional-changelog/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* unified presets interface ([#1045](https://github.com/conventional-changelog/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/conventional-changelog/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+
+### Bug Fixes
+
+* **deps:** update dependency fancy-log to v2 ([#901](https://github.com/conventional-changelog/conventional-changelog/issues/901)) ([5d93f15](https://github.com/conventional-changelog/conventional-changelog/commit/5d93f15f767a121fffda434e2eb1e862d8621a2f))
+* **deps:** update dependency plugin-error to v2 ([#1038](https://github.com/conventional-changelog/conventional-changelog/issues/1038)) ([5fe464c](https://github.com/conventional-changelog/conventional-changelog/commit/5fe464cc5972af35c93f224256a20a56be4b9d31))
+
+## [3.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/gulp-conventional-changelog-v2.0.35...gulp-conventional-changelog-v3.0.0) (2023-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 14 is required
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/conventional-changelog/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/conventional-changelog/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+
 ## [2.0.35](https://github.com/conventional-changelog/conventional-changelog/compare/gulp-conventional-changelog@2.0.34...gulp-conventional-changelog@2.0.35) (2020-11-05)
 
 

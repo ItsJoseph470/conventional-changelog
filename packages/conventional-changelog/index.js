@@ -1,14 +1,12 @@
-'use strict'
+import conventionalChangelogCore from 'conventional-changelog-core'
+import { loadPreset } from 'conventional-changelog-preset-loader'
 
-const conventionalChangelogCore = require('conventional-changelog-core')
-const conventionalChangelogPresetLoader = require('conventional-changelog-preset-loader')
-
-function conventionalChangelog (options, context, gitRawCommitsOpts, parserOpts, writerOpts) {
+export default function conventionalChangelog (options, context, gitRawCommitsOpts, parserOpts, writerOpts) {
   options.warn = options.warn || function () {}
 
   if (options.preset) {
     try {
-      options.config = conventionalChangelogPresetLoader(options.preset)
+      options.config = loadPreset(options.preset)
     } catch (err) {
       if (typeof options.preset === 'object') {
         options.warn(`Preset: "${options.preset.name}" ${err.message}`)
@@ -22,5 +20,3 @@ function conventionalChangelog (options, context, gitRawCommitsOpts, parserOpts,
 
   return conventionalChangelogCore(options, context, gitRawCommitsOpts, parserOpts, writerOpts)
 }
-
-module.exports = conventionalChangelog

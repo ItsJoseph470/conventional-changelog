@@ -37,6 +37,78 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [6.1.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v6.0.0...conventional-commits-parser-v6.1.0) (2025-01-15)
+
+
+### Features
+
+* **conventional-commits-parser:** allow @ in scope part of the header ([#1283](https://github.com/conventional-changelog/conventional-changelog/issues/1283)) ([d48c660](https://github.com/conventional-changelog/conventional-changelog/commit/d48c660e849868e0f014cb0634bc37b7b4086d49))
+
+
+### Bug Fixes
+
+* **conventional-commits-parser:** give a possible 'header' merge pattern correspondence a priority over the next line ([#1311](https://github.com/conventional-changelog/conventional-changelog/issues/1311)) ([373d330](https://github.com/conventional-changelog/conventional-changelog/commit/373d330c76c54de7b6214a27e5b1577b243ed029))
+* **conventional-commits-parser:** ignore irrelevant references ([#1288](https://github.com/conventional-changelog/conventional-changelog/issues/1288)) ([115d5d0](https://github.com/conventional-changelog/conventional-changelog/commit/115d5d0bcc10df793c6156d041fb9957314b4ccb))
+
+## [6.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v5.0.0...conventional-commits-parser-v6.0.0) (2024-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* **conventional-recommended-bump:** new `Bumper` exported class ([#1218](https://github.com/conventional-changelog/conventional-changelog/issues/1218))
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126))
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* **git-semver-tags,conventional-recommended-bump:** gitSemverTags and conventionalRecommendedBump now return promises
+* **standard-changelog:** createIfMissing method now returns a promise
+
+### Features
+
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178)) ([e0c7b06](https://github.com/conventional-changelog/conventional-changelog/commit/e0c7b060202100ab82d858986ce43ba1b310d496))
+* **conventional-commits-parser:** add parseCommits method to work with async iterables ([#1180](https://github.com/conventional-changelog/conventional-changelog/issues/1180)) ([7ee67ec](https://github.com/conventional-changelog/conventional-changelog/commit/7ee67ec5602d052d62ed2072760fe29c98e5c36a))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126)) ([9e280d8](https://github.com/conventional-changelog/conventional-changelog/commit/9e280d89f33e2185643e2531edb668bd0e0df22c))
+* **conventional-recommended-bump:** new `Bumper` exported class ([#1218](https://github.com/conventional-changelog/conventional-changelog/issues/1218)) ([0ddc8cd](https://github.com/conventional-changelog/conventional-changelog/commit/0ddc8cdceb91f838f9f73e0bff8e3f140176a13a))
+* drop node 16 support ([#1226](https://github.com/conventional-changelog/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/conventional-changelog/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* **git-semver-tags,conventional-recommended-bump:** refactoring to use promises instead of callbacks ([#1112](https://github.com/conventional-changelog/conventional-changelog/issues/1112)) ([1697ecd](https://github.com/conventional-changelog/conventional-changelog/commit/1697ecdf4c2329732e612cc1bd3323e84f046f3a))
+* move from CommonJS to ESM ([#1144](https://github.com/conventional-changelog/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/conventional-changelog/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* **standard-changelog:** use promises ([#1111](https://github.com/conventional-changelog/conventional-changelog/issues/1111)) ([5015ab7](https://github.com/conventional-changelog/conventional-changelog/commit/5015ab71de7a3db9cbcbbabd0cc25502f1cd0109))
+
+
+### Bug Fixes
+
+* **conventional-commits-parser:** parse header if subject includes ! to indicate breaking change ([#1213](https://github.com/conventional-changelog/conventional-changelog/issues/1213)) ([30cfa82](https://github.com/conventional-changelog/conventional-changelog/commit/30cfa8276436415b994599ab55db3a723d136e03))
+* **deps:** update dependency meow to v13 ([#1190](https://github.com/conventional-changelog/conventional-changelog/issues/1190)) ([862f66b](https://github.com/conventional-changelog/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+
+## [5.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v4.0.0...conventional-commits-parser-v5.0.0) (2023-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 16 is required
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/conventional-changelog/conventional-changelog/issues/1085)) ([1bce036](https://github.com/conventional-changelog/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+
+
+### Bug Fixes
+
+* **deps:** update dependency is-text-path to v2 ([#903](https://github.com/conventional-changelog/conventional-changelog/issues/903)) ([8568ee4](https://github.com/conventional-changelog/conventional-changelog/commit/8568ee4bcd66ceeb85444dc71342bcb2b11db9ca))
+* **deps:** update dependency split2 to v4 ([#1032](https://github.com/conventional-changelog/conventional-changelog/issues/1032)) ([d16ccc5](https://github.com/conventional-changelog/conventional-changelog/commit/d16ccc5df75f2c728417d20324b6eb6e746633ab))
+* fix semver vulnerability ([#1071](https://github.com/conventional-changelog/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/conventional-changelog/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/conventional-changelog/conventional-changelog/issues/1019)
+
+## [4.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v3.2.4...conventional-commits-parser-v4.0.0) (2023-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 14 is required
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/conventional-changelog/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/conventional-changelog/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+
 ### [3.2.4](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v3.2.3...conventional-commits-parser-v3.2.4) (2021-12-29)
 
 

@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v8.0.0...conventional-changelog-core-v9.0.0) (2025-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **git-client:** ability to pass additional git params is removed
+
+### Bug Fixes
+
+* **conventional-changelog-core:** replace `read-package-up` ([#1289](https://github.com/conventional-changelog/conventional-changelog/issues/1289)) ([2f9aa21](https://github.com/conventional-changelog/conventional-changelog/commit/2f9aa212c54e23d761a59755610313a37006cd53))
+* **deps:** update dependency hosted-git-info to v8 ([#1299](https://github.com/conventional-changelog/conventional-changelog/issues/1299)) ([c86bd93](https://github.com/conventional-changelog/conventional-changelog/commit/c86bd93d949de41a662f8a397b1e796b2ce9a54d))
+* **deps:** update dependency normalize-package-data to v7 ([#1303](https://github.com/conventional-changelog/conventional-changelog/issues/1303)) ([f8df2ef](https://github.com/conventional-changelog/conventional-changelog/commit/f8df2ef713fac42866001d3c71049ec15de43c17))
+* **git-client:** ability to pass additional git params is removed by security reasons ([#1325](https://github.com/conventional-changelog/conventional-changelog/issues/1325)) ([d95c9ff](https://github.com/conventional-changelog/conventional-changelog/commit/d95c9ffac05af58228bd89fa0ba37ad65741c6a2))
+
+## [8.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v7.0.0...conventional-changelog-core-v8.0.0) (2024-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* cleanup presets interface ([#1215](https://github.com/conventional-changelog/conventional-changelog/issues/1215))
+* **git-semver-tags:** refactored to use @conventional-changelog/git-client ([#1203](https://github.com/conventional-changelog/conventional-changelog/issues/1203))
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199))
+* **conventional-changelog-writer:** align methods with other packages ([#1182](https://github.com/conventional-changelog/conventional-changelog/issues/1182))
+* **conventional-changelog-writer:** rewrite to TypeScript ([#1150](https://github.com/conventional-changelog/conventional-changelog/issues/1150))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126))
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+
+### Features
+
+* cleanup presets interface ([#1215](https://github.com/conventional-changelog/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/conventional-changelog/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* **conventional-changelog-writer:** align methods with other packages ([#1182](https://github.com/conventional-changelog/conventional-changelog/issues/1182)) ([7b13ec9](https://github.com/conventional-changelog/conventional-changelog/commit/7b13ec9afcbe7afc24ce47af805c339ba7f0276f))
+* **conventional-changelog-writer:** rewrite to TypeScript ([#1150](https://github.com/conventional-changelog/conventional-changelog/issues/1150)) ([8af364f](https://github.com/conventional-changelog/conventional-changelog/commit/8af364feb20f4e6f7ffab6f5b25638df780db715))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126)) ([9e280d8](https://github.com/conventional-changelog/conventional-changelog/commit/9e280d89f33e2185643e2531edb668bd0e0df22c))
+* drop node 16 support ([#1226](https://github.com/conventional-changelog/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/conventional-changelog/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199)) ([ba03ffc](https://github.com/conventional-changelog/conventional-changelog/commit/ba03ffc3c05e794db48b18a508f296d4d662a5d9))
+* **git-semver-tags:** refactored to use @conventional-changelog/git-client ([#1203](https://github.com/conventional-changelog/conventional-changelog/issues/1203)) ([7ac1860](https://github.com/conventional-changelog/conventional-changelog/commit/7ac186060b16ea66847c401d57ca78157329d778))
+* move from CommonJS to ESM ([#1144](https://github.com/conventional-changelog/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/conventional-changelog/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+
+
+### Bug Fixes
+
+* **deps:** replace dependency read-pkg-up with read-package-up ^11.0.0 ([#1207](https://github.com/conventional-changelog/conventional-changelog/issues/1207)) ([a3248b6](https://github.com/conventional-changelog/conventional-changelog/commit/a3248b6b2b2d5d46994ee21801fdf7434f4e013d))
+* **deps:** update dependency read-pkg to v9 ([#1160](https://github.com/conventional-changelog/conventional-changelog/issues/1160)) ([2875efc](https://github.com/conventional-changelog/conventional-changelog/commit/2875efc717e9d69609b5ca4284a88ea2189abe5b))
+
+## [7.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v6.0.0...conventional-changelog-core-v7.0.0) (2023-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **git-semver-tags,conventional-recommended-bump:** gitSemverTags and conventionalRecommendedBump now return promises
+* **standard-changelog:** createIfMissing method now returns a promise
+
+### Features
+
+* **git-semver-tags,conventional-recommended-bump:** refactoring to use promises instead of callbacks ([#1112](https://github.com/conventional-changelog/conventional-changelog/issues/1112)) ([1697ecd](https://github.com/conventional-changelog/conventional-changelog/commit/1697ecdf4c2329732e612cc1bd3323e84f046f3a))
+* **standard-changelog:** use promises ([#1111](https://github.com/conventional-changelog/conventional-changelog/issues/1111)) ([5015ab7](https://github.com/conventional-changelog/conventional-changelog/commit/5015ab71de7a3db9cbcbbabd0cc25502f1cd0109))
+
+## [6.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v5.0.2...conventional-changelog-core-v6.0.0) (2023-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/conventional-changelog/conventional-changelog/issues/1085)) ([1bce036](https://github.com/conventional-changelog/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* unified presets interface ([#1045](https://github.com/conventional-changelog/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/conventional-changelog/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+* use Intl.DateTimeFormat instead of dateformat ([#1075](https://github.com/conventional-changelog/conventional-changelog/issues/1075)) ([77c41e9](https://github.com/conventional-changelog/conventional-changelog/commit/77c41e93fe66c2287aad2c266dda91ebf978882a))
+
+
+### Bug Fixes
+
+* **deps:** update dependency get-pkg-repo to v5 ([#1030](https://github.com/conventional-changelog/conventional-changelog/issues/1030)) ([04b3183](https://github.com/conventional-changelog/conventional-changelog/commit/04b31833dfde97d16c6080b2501032ed15317ac6))
+* **deps:** update dependency hosted-git-info to v7 ([#1087](https://github.com/conventional-changelog/conventional-changelog/issues/1087)) ([ee8c63b](https://github.com/conventional-changelog/conventional-changelog/commit/ee8c63b9f099d74ddd0f828b82fe147eca487f11))
+* **deps:** update dependency normalize-package-data to v5 ([#1037](https://github.com/conventional-changelog/conventional-changelog/issues/1037)) ([1230bba](https://github.com/conventional-changelog/conventional-changelog/commit/1230bbaa6f86d528b90ec53fcebafc75dbaef523))
+* **deps:** update dependency normalize-package-data to v6 ([#1082](https://github.com/conventional-changelog/conventional-changelog/issues/1082)) ([fd7403a](https://github.com/conventional-changelog/conventional-changelog/commit/fd7403ad283b2fd64597ffb35964149491f503eb))
+* fix semver vulnerability ([#1071](https://github.com/conventional-changelog/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/conventional-changelog/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/conventional-changelog/conventional-changelog/issues/1019)
+
+## [5.0.2](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v5.0.1...conventional-changelog-core-v5.0.2) (2023-06-28)
+
+
+### Bug Fixes
+
+* avoid overwriting the default values of options with undefined ([#1018](https://github.com/conventional-changelog/conventional-changelog/issues/1018)) ([71b0c40](https://github.com/conventional-changelog/conventional-changelog/commit/71b0c4051bd2d63999db23279424d76fae1ddc11))
+
+## [5.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v5.0.0...conventional-changelog-core-v5.0.1) (2023-06-06)
+
+
+### Bug Fixes
+
+* **conventional-changelog-core:** update monorepo dependencies ([#1012](https://github.com/conventional-changelog/conventional-changelog/issues/1012)) ([ef3413a](https://github.com/conventional-changelog/conventional-changelog/commit/ef3413a40e48628e94c88bc50bf4fba0ddc0b0b0))
+
+## [5.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v4.2.4...conventional-changelog-core-v5.0.0) (2023-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* now all promises are native
+* Node >= 14 is required
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/conventional-changelog/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/conventional-changelog/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/conventional-changelog/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/conventional-changelog/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+
 ### [4.2.4](https://www.github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-core-v4.2.3...conventional-changelog-core-v4.2.4) (2021-09-09)
 
 

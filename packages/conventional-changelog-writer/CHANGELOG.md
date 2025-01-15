@@ -3,6 +3,87 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v8.0.0...conventional-changelog-writer-v8.0.1) (2025-01-15)
+
+
+### Bug Fixes
+
+* **conventional-changelog-writer,git-client:** move `@types/semver` to dev dependencies ([#1268](https://github.com/conventional-changelog/conventional-changelog/issues/1268)) ([4ca2b86](https://github.com/conventional-changelog/conventional-changelog/commit/4ca2b86ebe22f312ebc492eead0ad859e519f43b))
+* **conventional-changelog-writer:** fix modification prevention for Date objects ([#1285](https://github.com/conventional-changelog/conventional-changelog/issues/1285)) ([56a5f3c](https://github.com/conventional-changelog/conventional-changelog/commit/56a5f3cbbab72d8bb1f19aa697927a8f24490812))
+
+## [8.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v7.0.1...conventional-changelog-writer-v8.0.0) (2024-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* **conventional-changelog-writer:** `formatDate` option ([#1189](https://github.com/conventional-changelog/conventional-changelog/issues/1189))
+* **conventional-changelog-writer:** align methods with other packages ([#1182](https://github.com/conventional-changelog/conventional-changelog/issues/1182))
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178))
+* **conventional-changelog-writer:** rewrite to TypeScript ([#1150](https://github.com/conventional-changelog/conventional-changelog/issues/1150))
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+
+### Features
+
+* **conventional-changelog-writer:** `formatDate` option ([#1189](https://github.com/conventional-changelog/conventional-changelog/issues/1189)) ([8c4bbbe](https://github.com/conventional-changelog/conventional-changelog/commit/8c4bbbe2945a23bd3660a2dbfe1b497fda03afa4)), closes [#1186](https://github.com/conventional-changelog/conventional-changelog/issues/1186)
+* **conventional-changelog-writer:** align methods with other packages ([#1182](https://github.com/conventional-changelog/conventional-changelog/issues/1182)) ([7b13ec9](https://github.com/conventional-changelog/conventional-changelog/commit/7b13ec9afcbe7afc24ce47af805c339ba7f0276f))
+* **conventional-changelog-writer:** rewrite to TypeScript ([#1150](https://github.com/conventional-changelog/conventional-changelog/issues/1150)) ([8af364f](https://github.com/conventional-changelog/conventional-changelog/commit/8af364feb20f4e6f7ffab6f5b25638df780db715))
+* **conventional-changelog-writer:** timeZone option ([#1162](https://github.com/conventional-changelog/conventional-changelog/issues/1162)) ([27f3642](https://github.com/conventional-changelog/conventional-changelog/commit/27f36422fdeb9a855c26ceac6d80896af0918764))
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178)) ([e0c7b06](https://github.com/conventional-changelog/conventional-changelog/commit/e0c7b060202100ab82d858986ce43ba1b310d496))
+* drop node 16 support ([#1226](https://github.com/conventional-changelog/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/conventional-changelog/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* move from CommonJS to ESM ([#1144](https://github.com/conventional-changelog/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/conventional-changelog/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+
+
+### Bug Fixes
+
+* **deps:** update dependency meow to v13 ([#1190](https://github.com/conventional-changelog/conventional-changelog/issues/1190)) ([862f66b](https://github.com/conventional-changelog/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+
+## [7.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v7.0.0...conventional-changelog-writer-v7.0.1) (2023-09-10)
+
+
+### Bug Fixes
+
+* **conventional-changelog-writer:** fix transform async handlers ([#1146](https://github.com/conventional-changelog/conventional-changelog/issues/1146)) ([be3901b](https://github.com/conventional-changelog/conventional-changelog/commit/be3901bc66e44f938c4a9634b697a0c79841635a))
+
+## [7.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v6.0.1...conventional-changelog-writer-v7.0.0) (2023-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/conventional-changelog/conventional-changelog/issues/1085)) ([1bce036](https://github.com/conventional-changelog/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* unified presets interface ([#1045](https://github.com/conventional-changelog/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/conventional-changelog/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+* use Intl.DateTimeFormat instead of dateformat ([#1075](https://github.com/conventional-changelog/conventional-changelog/issues/1075)) ([77c41e9](https://github.com/conventional-changelog/conventional-changelog/commit/77c41e93fe66c2287aad2c266dda91ebf978882a))
+
+
+### Bug Fixes
+
+* align split2 package between packages ([#1084](https://github.com/conventional-changelog/conventional-changelog/issues/1084)) ([bf28e5f](https://github.com/conventional-changelog/conventional-changelog/commit/bf28e5f9e1678833356e6b58ddebfb7d6ceb6f1d))
+* fix semver vulnerability ([#1071](https://github.com/conventional-changelog/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/conventional-changelog/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/conventional-changelog/conventional-changelog/issues/1019)
+
+## [6.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v6.0.0...conventional-changelog-writer-v6.0.1) (2023-07-09)
+
+
+### Bug Fixes
+
+* **conventional-changelog-writer:** pass commit deep copy to writer transformer ([#1044](https://github.com/conventional-changelog/conventional-changelog/issues/1044)) ([208ffdb](https://github.com/conventional-changelog/conventional-changelog/commit/208ffdb246b6acf4f016c6ca6e02b2e347c6bd67))
+* **deps:** update dependency semver to v7 [security] ([#1021](https://github.com/conventional-changelog/conventional-changelog/issues/1021)) ([31fa409](https://github.com/conventional-changelog/conventional-changelog/commit/31fa409e446a51a5a23e2217997d04364b89c1dd))
+
+## [6.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v5.0.1...conventional-changelog-writer-v6.0.0) (2023-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 14 is required
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/conventional-changelog/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/conventional-changelog/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+
 ### [5.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v5.0.0...conventional-changelog-writer-v5.0.1) (2021-12-29)
 
 

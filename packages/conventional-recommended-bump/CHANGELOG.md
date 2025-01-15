@@ -3,6 +3,105 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v10.0.0...conventional-recommended-bump-v11.0.0) (2025-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **git-client:** ability to pass additional git params is removed
+
+### Bug Fixes
+
+* **git-client:** ability to pass additional git params is removed by security reasons ([#1325](https://github.com/conventional-changelog/conventional-changelog/issues/1325)) ([d95c9ff](https://github.com/conventional-changelog/conventional-changelog/commit/d95c9ffac05af58228bd89fa0ba37ad65741c6a2))
+
+## [10.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v9.0.0...conventional-recommended-bump-v10.0.0) (2024-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* **conventional-recommended-bump:** new `Bumper` exported class ([#1218](https://github.com/conventional-changelog/conventional-changelog/issues/1218))
+* cleanup presets interface ([#1215](https://github.com/conventional-changelog/conventional-changelog/issues/1215))
+* **git-semver-tags:** refactored to use @conventional-changelog/git-client ([#1203](https://github.com/conventional-changelog/conventional-changelog/issues/1203))
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199))
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126))
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+
+### Features
+
+* cleanup presets interface ([#1215](https://github.com/conventional-changelog/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/conventional-changelog/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* **conventional-commits-filter:** rewrite to TypeScript ([#1178](https://github.com/conventional-changelog/conventional-changelog/issues/1178)) ([e0c7b06](https://github.com/conventional-changelog/conventional-changelog/commit/e0c7b060202100ab82d858986ce43ba1b310d496))
+* **conventional-commits-parser:** rewrite to TypeScript ([#1126](https://github.com/conventional-changelog/conventional-changelog/issues/1126)) ([9e280d8](https://github.com/conventional-changelog/conventional-changelog/commit/9e280d89f33e2185643e2531edb668bd0e0df22c))
+* **conventional-recommended-bump:** new `Bumper` exported class ([#1218](https://github.com/conventional-changelog/conventional-changelog/issues/1218)) ([0ddc8cd](https://github.com/conventional-changelog/conventional-changelog/commit/0ddc8cdceb91f838f9f73e0bff8e3f140176a13a))
+* drop node 16 support ([#1226](https://github.com/conventional-changelog/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/conventional-changelog/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* **git-raw-commits:** refactored to use @conventional-changelog/git-client ([#1199](https://github.com/conventional-changelog/conventional-changelog/issues/1199)) ([ba03ffc](https://github.com/conventional-changelog/conventional-changelog/commit/ba03ffc3c05e794db48b18a508f296d4d662a5d9))
+* **git-semver-tags:** refactored to use @conventional-changelog/git-client ([#1203](https://github.com/conventional-changelog/conventional-changelog/issues/1203)) ([7ac1860](https://github.com/conventional-changelog/conventional-changelog/commit/7ac186060b16ea66847c401d57ca78157329d778))
+* move from CommonJS to ESM ([#1144](https://github.com/conventional-changelog/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/conventional-changelog/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+
+
+### Bug Fixes
+
+* **conventional-changelog-cli,conventional-recommended-bump,standard-changelog:** fix config loading ([#1234](https://github.com/conventional-changelog/conventional-changelog/issues/1234)) ([c2c4b3a](https://github.com/conventional-changelog/conventional-changelog/commit/c2c4b3a4cb60f784a4e7ee83d189b85c0acac960))
+* **deps:** update dependency meow to v13 ([#1190](https://github.com/conventional-changelog/conventional-changelog/issues/1190)) ([862f66b](https://github.com/conventional-changelog/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+
+## [9.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v8.0.0...conventional-recommended-bump-v9.0.0) (2023-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **git-semver-tags,conventional-recommended-bump:** gitSemverTags and conventionalRecommendedBump now return promises
+* **standard-changelog:** createIfMissing method now returns a promise
+
+### Features
+
+* **git-semver-tags,conventional-recommended-bump:** refactoring to use promises instead of callbacks ([#1112](https://github.com/conventional-changelog/conventional-changelog/issues/1112)) ([1697ecd](https://github.com/conventional-changelog/conventional-changelog/commit/1697ecdf4c2329732e612cc1bd3323e84f046f3a))
+* **standard-changelog:** use promises ([#1111](https://github.com/conventional-changelog/conventional-changelog/issues/1111)) ([5015ab7](https://github.com/conventional-changelog/conventional-changelog/commit/5015ab71de7a3db9cbcbbabd0cc25502f1cd0109))
+
+## [8.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v7.0.1...conventional-recommended-bump-v8.0.0) (2023-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/conventional-changelog/conventional-changelog/issues/1085)) ([1bce036](https://github.com/conventional-changelog/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* **git-semver-tags,conventional-recommended-bump:** define `skip-unstable` option in cli ([#1066](https://github.com/conventional-changelog/conventional-changelog/issues/1066)) ([0ffec3f](https://github.com/conventional-changelog/conventional-changelog/commit/0ffec3f60a1119e180e244b5500f9a8c35671a98))
+* unified presets interface ([#1045](https://github.com/conventional-changelog/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/conventional-changelog/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+
+### Bug Fixes
+
+* fix semver vulnerability ([#1071](https://github.com/conventional-changelog/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/conventional-changelog/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/conventional-changelog/conventional-changelog/issues/1019)
+
+## [7.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v7.0.0...conventional-recommended-bump-v7.0.1) (2023-06-06)
+
+
+### Bug Fixes
+
+* **conventional-changelog-core:** update monorepo dependencies ([#1012](https://github.com/conventional-changelog/conventional-changelog/issues/1012)) ([ef3413a](https://github.com/conventional-changelog/conventional-changelog/commit/ef3413a40e48628e94c88bc50bf4fba0ddc0b0b0))
+
+## [7.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v6.1.0...conventional-recommended-bump-v7.0.0) (2023-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* now all promises are native
+* Node >= 14 is required
+
+### Features
+
+* add possibility to provide custom flags to commit fetcher ([#978](https://github.com/conventional-changelog/conventional-changelog/issues/978)) ([58f0887](https://github.com/conventional-changelog/conventional-changelog/commit/58f0887283a200d52e49607baf7b352f26177b05))
+
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/conventional-changelog/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/conventional-changelog/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/conventional-changelog/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/conventional-changelog/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+
 ## [6.1.0](https://www.github.com/conventional-changelog/conventional-changelog/compare/v6.0.12...v6.1.0) (2020-12-30)
 
 

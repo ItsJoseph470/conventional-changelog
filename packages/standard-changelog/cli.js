@@ -1,15 +1,49 @@
 #!/usr/bin/env node
-'use strict'
-const addStream = require('add-stream')
-const chalk = require('chalk')
-const standardChangelog = require('./')
-const fs = require('fs')
-const meow = require('meow')
-const tempfile = require('tempfile')
-const _ = require('lodash')
-const resolve = require('path').resolve
-const Readable = require('stream').Readable
-const rimraf = require('rimraf')
+import { resolve, extname } from 'path'
+import { pathToFileURL } from 'url'
+import { createWriteStream } from 'fs'
+import {
+  readFile,
+  writeFile
+} from 'fs/promises'
+import pc from 'picocolors'
+import meow from 'meow'
+import standardChangelog, {
+  createIfMissing,
+  checkpoint
+} from './index.js'
+
+function relativeResolve (filePath) {
+  return pathToFileURL(resolve(process.cwd(), filePath))
+}
+
+async function loadDataFile (filePath) {
+  const resolvedFilePath = relativeResolve(filePath)
+  const ext = extname(resolvedFilePath.toString())
+
+  if (ext === '.json') {
+    return JSON.parse(await readFile(resolvedFilePath, 'utf8'))
+  }
+
+  return (await import(resolvedFilePath)).default
+}
+
+function printError (err) {
+  if (flags.verbose) {
+    console.error(pc.gray(err.stack))
+  } else {
+    console.error(pc.red(err.toString()))
+  }
+
+  process.exit(1)
+}
+
+function waitStreamFinish (stream) {
+  return new Promise((resolve) => {
+    stream.on('finish', resolve)
+    stream.on('error', printError)
+  })
+}
 
 const cli = meow(`
   Usage
@@ -29,55 +63,56 @@ const cli = meow(`
     -l, --lerna-package       Generate a changelog for a specific lerna package (:pkg-name@1.0.0)
     --commit-path             Generate a changelog scoped to a specific directory
 `, {
+  importMeta: import.meta,
   booleanDefault: undefined,
   flags: {
     infile: {
-      alias: 'i',
+      shortFlag: 'i',
       default: 'CHANGELOG.md',
       type: 'string'
     },
     help: {
-      alias: 'h'
+      shortFlag: 'h'
     },
     outfile: {
-      alias: 'o',
+      shortFlag: 'o',
       type: 'string'
     },
-    'same-file': {
-      alias: 's',
+    sameFile: {
+      shortFlag: 's',
       default: true,
       type: 'boolean'
     },
     preset: {
-      alias: 'p',
+      shortFlag: 'p',
       type: 'string'
     },
     pkg: {
-      alias: 'k',
+      shortFlag: 'k',
       type: 'string'
     },
     append: {
-      alias: 'a',
+      shortFlag: 'a',
       type: 'boolean'
     },
-    'release-count': {
-      alias: 'r',
+    releaseCount: {
+      shortFlag: 'r',
       type: 'number'
     },
     verbose: {
-      alias: 'v',
+      shortFlag: 'v',
       type: 'boolean'
     },
     context: {
-      alias: 'c',
+      shortFlag: 'c',
       type: 'string'
     },
-    'first-release': {
-      alias: 'f',
+    firstRelease: {
+      shortFlag: 'f',
       type: 'boolean'
     },
-    'lerna-package': {
-      alias: 'l',
+    lernaPackage: {
+      shortFlag: 'l',
       type: 'string'
     }
   }
@@ -90,15 +125,15 @@ const outfile = sameFile ? (flags.outfile || infile) : flags.outfile
 const append = flags.append
 const releaseCount = flags.firstRelease ? 0 : flags.releaseCount
 
-const options = _.omitBy({
+const options = {
   preset: flags.preset,
   pkg: {
     path: flags.pkg
   },
-  append: append,
-  releaseCount: releaseCount,
+  append,
+  releaseCount,
   lernaPackage: flags.lernaPackage
-}, _.isUndefined)
+}
 
 if (flags.verbose) {
   options.warn = console.warn.bind(console)
@@ -106,61 +141,39 @@ if (flags.verbose) {
 
 let templateContext
 
-function outputError (err) {
-  if (flags.verbose) {
-    console.error(chalk.grey(err.stack))
-  } else {
-    console.error(chalk.red(err.toString()))
-  }
-  process.exit(1)
-}
-
 try {
   if (flags.context) {
-    templateContext = require(resolve(process.cwd(), flags.context))
+    templateContext = await loadDataFile(flags.context)
   }
 } catch (err) {
-  outputError(err)
+  printError(err)
 }
 
 const changelogStream = standardChangelog(options, templateContext, flags.commitPath ? { path: flags.commitPath } : {})
-  .on('error', function (err) {
-    outputError(err)
-  })
 
-standardChangelog.createIfMissing(infile)
-
-let readStream = null
-if (releaseCount !== 0) {
-  readStream = fs.createReadStream(infile)
-    .on('error', function (err) {
-      outputError(err)
-    })
-} else {
-  readStream = new Readable()
-  readStream.push(null)
-}
+await createIfMissing(infile)
 
 if (options.append) {
-  changelogStream
-    .pipe(fs.createWriteStream(outfile, {
-      flags: 'a'
-    }))
-    .on('finish', function () {
-      standardChangelog.checkpoint('appended changes to %s', [outfile])
-    })
-} else {
-  const tmp = tempfile()
+  await waitStreamFinish(
+    changelogStream
+      .pipe(createWriteStream(outfile, {
+        flags: 'a'
+      }))
+  )
 
-  changelogStream
-    .pipe(addStream(readStream))
-    .pipe(fs.createWriteStream(tmp))
-    .on('finish', function () {
-      fs.createReadStream(tmp)
-        .pipe(fs.createWriteStream(outfile))
-        .on('finish', function () {
-          standardChangelog.checkpoint('output changes to %s', [outfile])
-          rimraf.sync(tmp)
-        })
-    })
+  checkpoint('appended changes to %s', [outfile])
+} else {
+  let changelog = ''
+
+  for await (const chunk of changelogStream) {
+    changelog += chunk.toString()
+  }
+
+  if (releaseCount !== 0) {
+    changelog += await readFile(infile, 'utf8')
+  }
+
+  await writeFile(outfile, changelog)
+
+  checkpoint('output changes to %s', [outfile])
 }

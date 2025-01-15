@@ -1,24 +1,9 @@
 {
   "name": "conventional-changelog",
-  "version": "3.1.25",
-  "description": "Generate a changelog from git metadata",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/conventional-changelog/conventional-changelog.git"
-  },
-  "keywords": [
-    "conventional-changelog",
-    "conventional",
-    "changelog",
-    "log"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "license": "MIT",
-  "files": [
-    "index.js"
-  ],
+  "type": "module",
+  "version": "6.0.0",
+  "description": "Generate a changelog from git metadata.",
+  "author": "Steve Mao",
   "contributors": [
     {
       "name": "Brian Ford"
@@ -30,24 +15,50 @@
       "name": "Andrew Joslin"
     }
   ],
+  "license": "MIT",
+  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conventional-changelog/conventional-changelog.git",
+    "directory": "packages/conventional-changelog"
+  },
   "bugs": {
     "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
   },
-  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog#readme",
-  "dependencies": {
-    "conventional-changelog-angular": "^5.0.12",
-    "conventional-changelog-atom": "^2.0.8",
-    "conventional-changelog-codemirror": "^2.0.8",
-    "conventional-changelog-conventionalcommits": "^4.5.0",
-    "conventional-changelog-core": "^4.2.1",
-    "conventional-changelog-ember": "^2.0.9",
-    "conventional-changelog-eslint": "^3.0.9",
-    "conventional-changelog-express": "^2.0.6",
-    "conventional-changelog-jquery": "^3.0.11",
-    "conventional-changelog-jshint": "^2.0.9",
-    "conventional-changelog-preset-loader": "^2.3.4"
+  "keywords": [
+    "conventional-changelog",
+    "conventional",
+    "changelog",
+    "log"
+  ],
+  "engines": {
+    "node": ">=18"
   },
+  "exports": "./index.js",
+  "publishConfig": {
+    "directory": "package",
+    "linkDirectory": false
+  },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test-windows": "mocha --timeout 30000"
+    "clear:package": "del ./package",
+    "clear": "del ./package",
+    "prepublishOnly": "run clear:package clean-publish",
+    "postpublish": "pnpm clear:package"
+  },
+  "dependencies": {
+    "conventional-changelog-angular": "workspace:^",
+    "conventional-changelog-atom": "workspace:^",
+    "conventional-changelog-codemirror": "workspace:^",
+    "conventional-changelog-conventionalcommits": "workspace:^",
+    "conventional-changelog-core": "workspace:^",
+    "conventional-changelog-ember": "workspace:^",
+    "conventional-changelog-eslint": "workspace:^",
+    "conventional-changelog-express": "workspace:^",
+    "conventional-changelog-jquery": "workspace:^",
+    "conventional-changelog-jshint": "workspace:^",
+    "conventional-changelog-preset-loader": "workspace:^"
   }
 }

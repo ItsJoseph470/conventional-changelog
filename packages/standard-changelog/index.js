@@ -1,34 +1,27 @@
-'use strict'
+import fs from 'fs/promises'
+import pc from 'picocolors'
+import conventionalChangelogCore from 'conventional-changelog-core'
+import angular from 'conventional-changelog-angular'
+import { tick } from './figures.js'
 
-const conventionalChangelogCore = require('conventional-changelog-core')
-const angular = require('conventional-changelog-angular')
-const fs = require('fs')
-const accessSync = require('fs-access').sync
-const chalk = require('chalk')
-const figures = require('figures')
-const sprintf = require('sprintf-js').sprintf
-
-function conventionalChangelog (options, context, gitRawCommitsOpts, parserOpts, writerOpts) {
+export default function conventionalChangelog (options, context, gitRawCommitsOpts, parserOpts, writerOpts) {
   options = options || {}
   options.config = angular
+
   return conventionalChangelogCore(options, context, gitRawCommitsOpts, parserOpts, writerOpts)
 }
 
-conventionalChangelog.createIfMissing = function (infile) {
+export async function createIfMissing (infile) {
   try {
-    accessSync(infile, fs.F_OK)
+    await fs.access(infile, fs.F_OK)
   } catch (err) {
     if (err.code === 'ENOENT') {
-      conventionalChangelog.checkpoint('created %s', [infile])
-      fs.writeFileSync(infile, '\n', 'utf-8')
+      checkpoint('created %s', [infile])
+      await fs.writeFile(infile, '\n', 'utf-8')
     }
   }
 }
 
-conventionalChangelog.checkpoint = function (msg, args) {
-  console.info(chalk.green(figures.tick) + ' ' + sprintf(msg, args.map(function (arg) {
-    return chalk.bold(arg)
-  })))
+export function checkpoint (msg, args) {
+  console.info(`${pc.green(tick)} ${msg}`, ...args.map(arg => pc.bold(arg)))
 }
-
-module.exports = conventionalChangelog

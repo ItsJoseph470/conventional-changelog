@@ -1,12 +1,12 @@
 # conventional-changelog-cli
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coverage-image]][coverage-url]
 
 > Generate a changelog from git metadata
 
 *[Changelog?](https://speakerdeck.com/stevemao/compose-a-changelog)*
 
-**Note** You don't have to use the angular commit convention. For the best result of the tool to tokenize you commit and produce flexible output, it's recommended to use a commit convention.
+**Note** You don't have to use the angular commit convention. For the best result of the tool to tokenize your commit and produce flexible output, it's recommended to use a commit convention.
 
 
 ## Quick start
@@ -31,7 +31,7 @@ All available command line parameters can be listed using CLI: `conventional-cha
 
 **Hint:** You can alias your command or add it to your package.json. EG: `"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"`.
 
-To fully customize the tool, please checkout [conventional-changelog](https://github.com/ajoslin/conventional-changelog) and [conventional-changelog-core](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-core) docs. You can find more details there. **Note: `config` here can work with `preset`, which is different than `options.config` in conventional-changelog.**
+To fully customize the tool, please checkout [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) and [conventional-changelog-core](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-core) docs. You can find more details there. **Note: `config` here can work with `preset`, which is different than `options.config` in conventional-changelog.**
 
 
 ## Example output
@@ -124,5 +124,5 @@ MIT © [Steve Mao](https://github.com/stevemao)
 [travis-url]: https://travis-ci.org/conventional-changelog/conventional-changelog-cli
 [daviddm-image]: https://david-dm.org/conventional-changelog/conventional-changelog-cli.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/conventional-changelog/conventional-changelog-cli
-[coveralls-image]: https://coveralls.io/repos/conventional-changelog/conventional-changelog-cli/badge.svg
-[coveralls-url]: https://coveralls.io/r/conventional-changelog/conventional-changelog-cli
+[coverage-image]: https://coveralls.io/repos/github/conventional-changelog/conventional-changelog/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/conventional-changelog/conventional-changelog?branch=master

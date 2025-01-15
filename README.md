@@ -1,13 +1,15 @@
 # Conventional Changelog
 
-[![Build Status](https://travis-ci.org/conventional-changelog/conventional-changelog.svg?branch=master)](https://travis-ci.org/conventional-changelog/conventional-changelog)
-[![Codecov](https://codecov.io/gh/conventional-changelog/conventional-changelog/branch/master/graph/badge.svg)](https://codecov.io/gh/conventional-changelog/conventional-changelog)
-[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
-[![community slack](http://devtoolscommunity.herokuapp.com/badge.svg)](http://devtoolscommunity.herokuapp.com)
+[![Build status][build]][build-url]
+[![Coverage status][coverage]][coverage-url]
 
-_Having problems? want to contribute? join our [community slack](http://devtoolscommunity.herokuapp.com)_.
+[build]: https://img.shields.io/github/actions/workflow/status/conventional-changelog/conventional-changelog/tests.yaml?branch=master
+[build-url]: https://github.com/conventional-changelog/conventional-changelog/actions
 
-> Generate a CHANGELOG from git metadata
+[coverage]: https://coveralls.io/repos/github/conventional-changelog/conventional-changelog/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/conventional-changelog/conventional-changelog?branch=master
+
+Generate a CHANGELOG from git metadata.
 
 ## About this Repo
 
@@ -18,7 +20,7 @@ found in [packages/conventional-changelog](https://github.com/conventional-chang
 
 ## Getting started
 
-It's recommended you use the high level [standard-version](https://github.com/conventional-changelog/standard-version) library, which is a drop-in replacement for npm's `version` command, handling automated version bumping, tagging and CHANGELOG generation.
+It's recommended you use the high level [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) library, which is a drop-in replacement for npm's `version` command, handling automated version bumping, tagging and CHANGELOG generation.
 
 Alternatively, if you'd like to move towards completely automating your release process as an output from CI/CD, consider using [semantic-release](https://github.com/semantic-release/semantic-release).
 

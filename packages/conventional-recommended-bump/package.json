@@ -1,50 +1,64 @@
 {
   "name": "conventional-recommended-bump",
-  "version": "6.1.0",
-  "description": "Get a recommended version bump based on conventional commits",
-  "bugs": {
-    "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
-  },
-  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-recommended-bump#readme",
+  "type": "module",
+  "version": "11.0.0",
+  "description": "Get a recommended version bump based on conventional commits.",
   "author": {
     "name": "Steve Mao",
     "email": "maochenyan@gmail.com",
     "url": "https://github.com/stevemao"
   },
+  "license": "MIT",
+  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-recommended-bump#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/conventional-changelog/conventional-changelog.git"
+    "url": "https://github.com/conventional-changelog/conventional-changelog.git",
+    "directory": "packages/conventional-recommended-bump"
   },
-  "license": "MIT",
-  "engines": {
-    "node": ">=10"
+  "bugs": {
+    "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
   },
-  "files": [
-    "index.js",
-    "cli.js",
-    "preset-resolver.js"
-  ],
   "keywords": [
     "conventional-recommended-bump",
     "recommend",
     "conventional",
     "bump"
   ],
-  "dependencies": {
-    "concat-stream": "^2.0.0",
-    "conventional-changelog-preset-loader": "^2.3.4",
-    "conventional-commits-filter": "^2.0.7",
-    "conventional-commits-parser": "^3.2.0",
-    "git-raw-commits": "^2.0.8",
-    "git-semver-tags": "^4.1.1",
-    "meow": "^8.0.0",
-    "q": "^1.5.1"
+  "engines": {
+    "node": ">=18"
   },
+  "exports": "./src/index.ts",
+  "publishConfig": {
+    "bin": {
+      "conventional-recommended-bump": "./dist/cli/index.js"
+    },
+    "exports": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "directory": "package",
+    "linkDirectory": false
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test-windows": "mocha --timeout 30000 ./test/preset-resolver.spec.js"
+    "clear:package": "del ./package",
+    "clear:dist": "del ./dist",
+    "clear": "del ./package ./dist",
+    "prepublishOnly": "run build clear:package clean-publish",
+    "postpublish": "pnpm clear:package",
+    "build": "tsc",
+    "test:types": "tsc --noEmit"
   },
-  "bin": "cli.js",
+  "dependencies": {
+    "@conventional-changelog/git-client": "workspace:^",
+    "conventional-changelog-preset-loader": "workspace:^",
+    "conventional-commits-filter": "workspace:^",
+    "conventional-commits-parser": "workspace:^",
+    "meow": "^13.0.0"
+  },
   "devDependencies": {
-    "conventional-changelog-conventionalcommits": "^4.5.0"
+    "conventional-changelog-conventionalcommits": "workspace:^"
   }
 }
