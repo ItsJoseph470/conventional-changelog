@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.0](https://github.com/ItsJoseph470/conventional-changelog/compare/conventional-changelog-preset-loader-v2.3.2...conventional-changelog-preset-loader-v7.0.0) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* packages now require Node.js 22 or newer.
+
+### Features
+
+* drop node 14 support ([#1085](https://github.com/ItsJoseph470/conventional-changelog/issues/1085)) ([1bce036](https://github.com/ItsJoseph470/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/ItsJoseph470/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/ItsJoseph470/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* move from CommonJS to ESM ([#1144](https://github.com/ItsJoseph470/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/ItsJoseph470/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* require node 22 ([de5e136](https://github.com/ItsJoseph470/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* rewrite to TypeScript ([#1185](https://github.com/ItsJoseph470/conventional-changelog/issues/1185)) ([d082692](https://github.com/ItsJoseph470/conventional-changelog/commit/d082692a2bafbc8edf402f353bc2b94bc8077f08))
+* throw error if preset does not export a function ([#1115](https://github.com/ItsJoseph470/conventional-changelog/issues/1115)) ([4f09e6d](https://github.com/ItsJoseph470/conventional-changelog/commit/4f09e6da384c3d5d40da67ebddc07e2d1a03ac31))
+* unified presets interface ([#1045](https://github.com/ItsJoseph470/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* point package homepages and docs to documentation website ([04796e2](https://github.com/ItsJoseph470/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/ItsJoseph470/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/ItsJoseph470/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+
 ## [6.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-preset-loader-v6.0.0...conventional-changelog-preset-loader-v6.0.1) (2026-07-04)
 
 ### Bug Fixes

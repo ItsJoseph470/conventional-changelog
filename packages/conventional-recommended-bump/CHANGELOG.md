@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0](https://github.com/ItsJoseph470/conventional-changelog/compare/conventional-recommended-bump-v6.1.0...conventional-recommended-bump-v13.0.0) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* cleanup presets interface (#1215)
+* gitSemverTags and conventionalRecommendedBump now return promises
+* new `Bumper` exported class (#1218)
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* now all promises are native
+* packages now require Node.js 22 or newer.
+
+* feat!(git-semver-tags,conventional-recommended-bump): refactoring to use promises instead of callbacks (#1112) ([59c7848](https://github.com/ItsJoseph470/conventional-changelog/commit/59c784829aa538de19fcf2c490686eba6406fcce)), references [#1112](https://github.com/ItsJoseph470/conventional-changelog/issues/1112)
+
+### Features
+
+* add `loader` optional argument to `loadPreset` method ([f3fcf2e](https://github.com/ItsJoseph470/conventional-changelog/commit/f3fcf2e8d7e50e2d53a8046417e369e38de54700))
+* add possibility to provide custom flags to commit fetcher ([#978](https://github.com/ItsJoseph470/conventional-changelog/issues/978)) ([58f0887](https://github.com/ItsJoseph470/conventional-changelog/commit/58f0887283a200d52e49607baf7b352f26177b05))
+* cleanup presets interface ([#1215](https://github.com/ItsJoseph470/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/ItsJoseph470/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* define `skip-unstable` option in cli ([#1066](https://github.com/ItsJoseph470/conventional-changelog/issues/1066)) ([0ffec3f](https://github.com/ItsJoseph470/conventional-changelog/commit/0ffec3f60a1119e180e244b5500f9a8c35671a98))
+* drop node 14 support ([#1085](https://github.com/ItsJoseph470/conventional-changelog/issues/1085)) ([1bce036](https://github.com/ItsJoseph470/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/ItsJoseph470/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/ItsJoseph470/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* move from CommonJS to ESM ([#1144](https://github.com/ItsJoseph470/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/ItsJoseph470/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* new `Bumper` exported class ([#1218](https://github.com/ItsJoseph470/conventional-changelog/issues/1218)) ([0ddc8cd](https://github.com/ItsJoseph470/conventional-changelog/commit/0ddc8cdceb91f838f9f73e0bff8e3f140176a13a))
+* params composing and `config` method to set preset params directly ([#1349](https://github.com/ItsJoseph470/conventional-changelog/issues/1349)) ([2cc8509](https://github.com/ItsJoseph470/conventional-changelog/commit/2cc8509607962faf35b0770c91e94f1dceaccd80))
+* replace `meow` with `argue-cli` ([#1505](https://github.com/ItsJoseph470/conventional-changelog/issues/1505)) ([1ad6177](https://github.com/ItsJoseph470/conventional-changelog/commit/1ad6177da0b9da2df4fffc41e0b6caf9b76bf200))
+* require node 22 ([de5e136](https://github.com/ItsJoseph470/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* return parsed commits in result ([#1344](https://github.com/ItsJoseph470/conventional-changelog/issues/1344)) ([893546e](https://github.com/ItsJoseph470/conventional-changelog/commit/893546e6988967f7f9c83430eb1ad2982ef47b1b))
+* support manual commit ranges ([#1486](https://github.com/ItsJoseph470/conventional-changelog/issues/1486)) ([45e1a20](https://github.com/ItsJoseph470/conventional-changelog/commit/45e1a20110226e7aebaea8dd3cec7ef5e3eaf4db)), closes [#1361](https://github.com/ItsJoseph470/conventional-changelog/issues/1361)
+* unified presets interface ([#1045](https://github.com/ItsJoseph470/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* explain missing bump config ([e3bd09f](https://github.com/ItsJoseph470/conventional-changelog/commit/e3bd09f8ea2bedd7b85a562d1fa8cfa3649602c5))
+* fix config loading ([#1234](https://github.com/ItsJoseph470/conventional-changelog/issues/1234)) ([c2c4b3a](https://github.com/ItsJoseph470/conventional-changelog/commit/c2c4b3a4cb60f784a4e7ee83d189b85c0acac960)), closes [#1153](https://github.com/ItsJoseph470/conventional-changelog/issues/1153) [#1156](https://github.com/ItsJoseph470/conventional-changelog/issues/1156) [#1221](https://github.com/ItsJoseph470/conventional-changelog/issues/1221)
+* fix semver vulnerability ([#1071](https://github.com/ItsJoseph470/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/ItsJoseph470/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/ItsJoseph470/conventional-changelog/issues/1019)
+* point package homepages and docs to documentation website ([04796e2](https://github.com/ItsJoseph470/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* update dependency meow to v13 ([#1190](https://github.com/ItsJoseph470/conventional-changelog/issues/1190)) ([862f66b](https://github.com/ItsJoseph470/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/ItsJoseph470/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/ItsJoseph470/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/ItsJoseph470/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/ItsJoseph470/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+
 ## [12.1.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v12.0.1...conventional-recommended-bump-v12.1.0) (2026-07-09)
 
 ### Features

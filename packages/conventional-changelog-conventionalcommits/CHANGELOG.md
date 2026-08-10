@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/ItsJoseph470/conventional-changelog/compare/conventional-changelog-conventionalcommits-v5.0.0...conventional-changelog-conventionalcommits-v11.0.0) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* bang notes handling is removed, it already being handled in
+  conventional-commits-parser
+* cleanup presets interface (#1215)
+* Handlebars template strings and partial files were replaced with render functions.
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* now all promises are native
+* packages now require Node.js 22 or newer.
+* the commit type `effect` property replaces the `hidden` commit type property and the `bumpStrict` preset option for controlling changelog visibility and version bumps.
+
+### Features
+
+* add support for alphanumeric issues ([#1080](https://github.com/ItsJoseph470/conventional-changelog/issues/1080)) ([f9b1897](https://github.com/ItsJoseph470/conventional-changelog/commit/f9b18975ba1bf74ecb7a294f3b220794e0d09e0b))
+* align newline formatting across presets ([#1431](https://github.com/ItsJoseph470/conventional-changelog/issues/1431)) ([b0721e1](https://github.com/ItsJoseph470/conventional-changelog/commit/b0721e1d6c30b03e54d4fa5e271ecb67b5ae7ebe))
+* bang notes handling is removed ([#1355](https://github.com/ItsJoseph470/conventional-changelog/issues/1355)) ([5150f47](https://github.com/ItsJoseph470/conventional-changelog/commit/5150f479db0e633d5fab5853a68b6316134cd363))
+* cleanup presets interface ([#1215](https://github.com/ItsJoseph470/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/ItsJoseph470/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* drop node 14 support ([#1085](https://github.com/ItsJoseph470/conventional-changelog/issues/1085)) ([1bce036](https://github.com/ItsJoseph470/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/ItsJoseph470/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/ItsJoseph470/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* format references in breaking change notes ([#1529](https://github.com/ItsJoseph470/conventional-changelog/issues/1529)) ([a8ef1ed](https://github.com/ItsJoseph470/conventional-changelog/commit/a8ef1eda4526785460daa1f85a415eee326f291c)), closes [#631](https://github.com/ItsJoseph470/conventional-changelog/issues/631)
+* group notes by their keyword ([#1533](https://github.com/ItsJoseph470/conventional-changelog/issues/1533)) ([7be33d4](https://github.com/ItsJoseph470/conventional-changelog/commit/7be33d4bac4917340063e2186477f3a121541734)), closes [#815](https://github.com/ItsJoseph470/conventional-changelog/issues/815)
+* inline hbs templates in code as strings ([#1434](https://github.com/ItsJoseph470/conventional-changelog/issues/1434)) ([0d5a4a6](https://github.com/ItsJoseph470/conventional-changelog/commit/0d5a4a68b0ba79a3c97793395c6549af02272325))
+* move from CommonJS to ESM ([#1144](https://github.com/ItsJoseph470/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/ItsJoseph470/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* replace handlebars templates with render functions ([#1477](https://github.com/ItsJoseph470/conventional-changelog/issues/1477)) ([55e6716](https://github.com/ItsJoseph470/conventional-changelog/commit/55e6716e8f40c2a705bcb0cd343e1dcacd2f9459))
+* require node 22 ([de5e136](https://github.com/ItsJoseph470/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* scope option can be an array of strings ([#1391](https://github.com/ItsJoseph470/conventional-changelog/issues/1391)) ([81da809](https://github.com/ItsJoseph470/conventional-changelog/commit/81da80996888efb0277f7c6f76f2dd39164d81bd))
+* scope, scopeOnly and bumpStrict options were added ([e2973e2](https://github.com/ItsJoseph470/conventional-changelog/commit/e2973e28380405bfa62396ad0638ffc7cc237e0d))
+* sort groups based on config types ([#702](https://github.com/ItsJoseph470/conventional-changelog/issues/702)) ([#1002](https://github.com/ItsJoseph470/conventional-changelog/issues/1002)) ([0e59f0c](https://github.com/ItsJoseph470/conventional-changelog/commit/0e59f0c884bf104e3a6a14c5669c58755cdef064))
+* support changelog preamble ([#1489](https://github.com/ItsJoseph470/conventional-changelog/issues/1489)) ([7d9794f](https://github.com/ItsJoseph470/conventional-changelog/commit/7d9794ff7c4ca5e9bd916c400b7fb1e426319379))
+* support changelog preamble partial ([#1491](https://github.com/ItsJoseph470/conventional-changelog/issues/1491)) ([e93dbe4](https://github.com/ItsJoseph470/conventional-changelog/commit/e93dbe4a16bb621c6ae9d1082dcd09d34c6f8136))
+* support commit type effects ([#1484](https://github.com/ItsJoseph470/conventional-changelog/issues/1484)), closes [#1476](https://github.com/ItsJoseph470/conventional-changelog/issues/1476)
+* unified presets interface ([#1045](https://github.com/ItsJoseph470/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* avoid double empty lines ([#1235](https://github.com/ItsJoseph470/conventional-changelog/issues/1235)) ([3b4bfdf](https://github.com/ItsJoseph470/conventional-changelog/commit/3b4bfdf3ac7d26da8466a577227254123b767336)), closes [#1188](https://github.com/ItsJoseph470/conventional-changelog/issues/1188)
+* encode compare URL tags ([#1483](https://github.com/ItsJoseph470/conventional-changelog/issues/1483)) ([96bf235](https://github.com/ItsJoseph470/conventional-changelog/commit/96bf2355e9f4316eaf54823d7359a6b4bd42da4a))
+* fix handling input params ([#1120](https://github.com/ItsJoseph470/conventional-changelog/issues/1120)) ([e721cde](https://github.com/ItsJoseph470/conventional-changelog/commit/e721cdec8de32162dd56096ef6a07786f1b4faec))
+* include constants.js in package ([#1095](https://github.com/ItsJoseph470/conventional-changelog/issues/1095)) ([a730b18](https://github.com/ItsJoseph470/conventional-changelog/commit/a730b186c10493ee551b84b528d7437dbc3feac0)), closes [#1093](https://github.com/ItsJoseph470/conventional-changelog/issues/1093)
+* point package homepages and docs to documentation website ([04796e2](https://github.com/ItsJoseph470/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* render non-closing references separately ([#1482](https://github.com/ItsJoseph470/conventional-changelog/issues/1482)) ([adb2c69](https://github.com/ItsJoseph470/conventional-changelog/commit/adb2c697abe594d0b4cb6d858fcc3d2b46f21c30))
+* skip mention linkification inside inline code ([#1444](https://github.com/ItsJoseph470/conventional-changelog/issues/1444)) ([c598bf1](https://github.com/ItsJoseph470/conventional-changelog/commit/c598bf1dd8fe31fc3ce3ec561ac8b2b77cee3a02))
+* sort notes without compare-func ([#1487](https://github.com/ItsJoseph470/conventional-changelog/issues/1487)) ([dc78285](https://github.com/ItsJoseph470/conventional-changelog/commit/dc78285784fd119994c2438bd0f4cdbbb827565a))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/ItsJoseph470/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/ItsJoseph470/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/ItsJoseph470/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/ItsJoseph470/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+
 ## [10.2.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-conventionalcommits-v10.2.0...conventional-changelog-conventionalcommits-v10.2.1) (2026-07-04)
 
 ### Bug Fixes
