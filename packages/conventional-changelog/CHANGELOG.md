@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.1.1](https://github.com/ItsJoseph470/conventional-changelog/compare/conventional-changelog-v8.1.1...conventional-changelog-v8.1.1) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* conventional-changelog-core and conventional-changelog-cli packages are merged to conventional-changelog; new builder API and updated CLI flags - see docs for updates
+* drop support for Node 6 (#558)
+* drop support for Node 8 (#599)
+* forcing a breaking semver change based on https://github.com/conventional-changelog/conventional-changelog/pull/385
+* Handlebars template strings and partial files were replaced with render functions.
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* packages now require Node.js 22 or newer.
+
+### Features
+
+* add `loader` optional argument to `loadPreset` method ([f3fcf2e](https://github.com/ItsJoseph470/conventional-changelog/commit/f3fcf2e8d7e50e2d53a8046417e369e38de54700))
+* align newline formatting across presets ([#1431](https://github.com/ItsJoseph470/conventional-changelog/issues/1431)) ([b0721e1](https://github.com/ItsJoseph470/conventional-changelog/commit/b0721e1d6c30b03e54d4fa5e271ecb67b5ae7ebe))
+* conventionalcommits preset, preMajor config option ([#434](https://github.com/ItsJoseph470/conventional-changelog/issues/434)) ([dde12fe](https://github.com/ItsJoseph470/conventional-changelog/commit/dde12fe347d8c008c6ba3361e2f6357274537a77))
+* creating highly configurable preset, based on conventionalcommits.org ([#421](https://github.com/ItsJoseph470/conventional-changelog/issues/421)) ([f2fb240](https://github.com/ItsJoseph470/conventional-changelog/commit/f2fb240391e10c79756a590eb6aea1e235ccb0a2))
+* drop node 14 support ([#1085](https://github.com/ItsJoseph470/conventional-changelog/issues/1085)) ([1bce036](https://github.com/ItsJoseph470/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/ItsJoseph470/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/ItsJoseph470/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/ItsJoseph470/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/ItsJoseph470/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/ItsJoseph470/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* new builder API and cli flags ([#1352](https://github.com/ItsJoseph470/conventional-changelog/issues/1352)) ([42556a1](https://github.com/ItsJoseph470/conventional-changelog/commit/42556a104980a3ac093e6f3992d7ab2369d61ee1))
+* replace `meow` with `argue-cli` ([#1505](https://github.com/ItsJoseph470/conventional-changelog/issues/1505)) ([1ad6177](https://github.com/ItsJoseph470/conventional-changelog/commit/1ad6177da0b9da2df4fffc41e0b6caf9b76bf200))
+* replace handlebars templates with render functions ([#1477](https://github.com/ItsJoseph470/conventional-changelog/issues/1477)) ([55e6716](https://github.com/ItsJoseph470/conventional-changelog/commit/55e6716e8f40c2a705bcb0cd343e1dcacd2f9459))
+* require node 22 ([de5e136](https://github.com/ItsJoseph470/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* support manual commit ranges ([#1486](https://github.com/ItsJoseph470/conventional-changelog/issues/1486)) ([45e1a20](https://github.com/ItsJoseph470/conventional-changelog/commit/45e1a20110226e7aebaea8dd3cec7ef5e3eaf4db)), closes [#1361](https://github.com/ItsJoseph470/conventional-changelog/issues/1361)
+* unified presets interface ([#1045](https://github.com/ItsJoseph470/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+* use utils from simple-libs ([#1432](https://github.com/ItsJoseph470/conventional-changelog/issues/1432)) ([7d27d06](https://github.com/ItsJoseph470/conventional-changelog/commit/7d27d0673878b995e9c0c82641d9d70eb9561024))
+
+### Bug Fixes
+
+* do not cut commit hash in conventional changelog generator ([2270624](https://github.com/ItsJoseph470/conventional-changelog/commit/2270624d58a5fd16203af41d79002cc6df905097)), closes [#1375](https://github.com/ItsJoseph470/conventional-changelog/issues/1375)
+* do not generate sections for unstable tags when skipUnstable is set ([#1520](https://github.com/ItsJoseph470/conventional-changelog/issues/1520)) ([41f708d](https://github.com/ItsJoseph470/conventional-changelog/commit/41f708ddd02f6bf423f62f41999c30131975e046)), closes [#1519](https://github.com/ItsJoseph470/conventional-changelog/issues/1519)
+* improve version tag parsing in changelog generation ([#1466](https://github.com/ItsJoseph470/conventional-changelog/issues/1466)) ([268e0b5](https://github.com/ItsJoseph470/conventional-changelog/commit/268e0b5d466e9f621e280f7a0db3c7c75e08c572))
+* package build fix ([a7a0adb](https://github.com/ItsJoseph470/conventional-changelog/commit/a7a0adb43993f3121f849b51a8641ba0bfe6b1ee))
+* point package homepages and docs to documentation website ([04796e2](https://github.com/ItsJoseph470/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* regex for git+https urls now supports multiple GitLab subgroups ([#1429](https://github.com/ItsJoseph470/conventional-changelog/issues/1429)) ([4a7b763](https://github.com/ItsJoseph470/conventional-changelog/commit/4a7b763143dfbcaf8c4bd434a4ef7f9cfca2bf8c))
+* support scoped presets ([0f08267](https://github.com/ItsJoseph470/conventional-changelog/commit/0f08267a09f3406d5c51d9a5e207535db6b72736))
+* update dependency fd-package-json to v2 ([#1376](https://github.com/ItsJoseph470/conventional-changelog/issues/1376)) ([932c87d](https://github.com/ItsJoseph470/conventional-changelog/commit/932c87d03298fc0a166774d5a5b52cf6de795b3b))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/ItsJoseph470/conventional-changelog/issues/385)) ([cdef282](https://github.com/ItsJoseph470/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+* use lightweight package data normalization ([#1481](https://github.com/ItsJoseph470/conventional-changelog/issues/1481)) ([b2564d1](https://github.com/ItsJoseph470/conventional-changelog/commit/b2564d1f08e839837debe1f840b07a939851ff69))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/ItsJoseph470/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/ItsJoseph470/conventional-changelog/issues/599)) ([b9f5057](https://github.com/ItsJoseph470/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+* force breaking change ([f6d506d](https://github.com/ItsJoseph470/conventional-changelog/commit/f6d506de038a6a86a1915f85e7cef79a277af2b6))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/ItsJoseph470/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/ItsJoseph470/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/ItsJoseph470/conventional-changelog/issues/558)) ([fd80738](https://github.com/ItsJoseph470/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [8.1.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-v8.1.0...conventional-changelog-v8.1.1) (2026-08-06)
 
 ### Bug Fixes

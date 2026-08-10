@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.0](https://github.com/ItsJoseph470/conventional-changelog/compare/conventional-changelog-writer-v5.0.1...conventional-changelog-writer-v10.0.0) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* `conventionalChangelogWriter.parseArray` now returns Promise
+* `formatDate` option (#1189)
+* align methods with other packages (#1182)
+* Handlebars template strings and partial files were replaced with render functions.
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* packages now require Node.js 22 or newer.
+* rewrite to TypeScript (#1150)
+
+* feat!(conventional-changelog-writer): support async `options.transform` and `options.finalizeContext` #471 (#1065), references [#471](https://github.com/ItsJoseph470/conventional-changelog/issues/471) [#1065](https://github.com/ItsJoseph470/conventional-changelog/issues/1065)
+
+### Features
+
+* `formatDate` option ([#1189](https://github.com/ItsJoseph470/conventional-changelog/issues/1189)) ([8c4bbbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8c4bbbe2945a23bd3660a2dbfe1b497fda03afa4)), closes [#1186](https://github.com/ItsJoseph470/conventional-changelog/issues/1186)
+* `transformCommit` method and utils are added to exports ([#1350](https://github.com/ItsJoseph470/conventional-changelog/issues/1350)) ([6a05bad](https://github.com/ItsJoseph470/conventional-changelog/commit/6a05bad6c54381e5ba403449f0009e23aa7e7b31))
+* add skip option for skipping commits when writing changelog ([#1346](https://github.com/ItsJoseph470/conventional-changelog/issues/1346)) ([b3e3042](https://github.com/ItsJoseph470/conventional-changelog/commit/b3e3042a2a9fc9877f279e36dead38af51c233a2)), closes [#1179](https://github.com/ItsJoseph470/conventional-changelog/issues/1179) [#342](https://github.com/ItsJoseph470/conventional-changelog/issues/342)
+* align methods with other packages ([#1182](https://github.com/ItsJoseph470/conventional-changelog/issues/1182)) ([7b13ec9](https://github.com/ItsJoseph470/conventional-changelog/commit/7b13ec9afcbe7afc24ce47af805c339ba7f0276f))
+* align newline formatting across presets ([#1431](https://github.com/ItsJoseph470/conventional-changelog/issues/1431)) ([b0721e1](https://github.com/ItsJoseph470/conventional-changelog/commit/b0721e1d6c30b03e54d4fa5e271ecb67b5ae7ebe))
+* drop node 14 support ([#1085](https://github.com/ItsJoseph470/conventional-changelog/issues/1085)) ([1bce036](https://github.com/ItsJoseph470/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/ItsJoseph470/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/ItsJoseph470/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* inline hbs templates in code as strings ([#1434](https://github.com/ItsJoseph470/conventional-changelog/issues/1434)) ([0d5a4a6](https://github.com/ItsJoseph470/conventional-changelog/commit/0d5a4a68b0ba79a3c97793395c6549af02272325))
+* move from CommonJS to ESM ([#1144](https://github.com/ItsJoseph470/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/ItsJoseph470/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* replace `meow` with `argue-cli` ([#1505](https://github.com/ItsJoseph470/conventional-changelog/issues/1505)) ([1ad6177](https://github.com/ItsJoseph470/conventional-changelog/commit/1ad6177da0b9da2df4fffc41e0b6caf9b76bf200))
+* replace handlebars templates with render functions ([#1477](https://github.com/ItsJoseph470/conventional-changelog/issues/1477)) ([55e6716](https://github.com/ItsJoseph470/conventional-changelog/commit/55e6716e8f40c2a705bcb0cd343e1dcacd2f9459))
+* require node 22 ([de5e136](https://github.com/ItsJoseph470/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* rewrite to TypeScript ([#1150](https://github.com/ItsJoseph470/conventional-changelog/issues/1150)) ([8af364f](https://github.com/ItsJoseph470/conventional-changelog/commit/8af364feb20f4e6f7ffab6f5b25638df780db715))
+* support changelog preamble partial ([#1491](https://github.com/ItsJoseph470/conventional-changelog/issues/1491)) ([e93dbe4](https://github.com/ItsJoseph470/conventional-changelog/commit/e93dbe4a16bb621c6ae9d1082dcd09d34c6f8136))
+* timeZone option ([#1162](https://github.com/ItsJoseph470/conventional-changelog/issues/1162)) ([27f3642](https://github.com/ItsJoseph470/conventional-changelog/commit/27f36422fdeb9a855c26ceac6d80896af0918764))
+* unified presets interface ([#1045](https://github.com/ItsJoseph470/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/ItsJoseph470/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+* use Intl.DateTimeFormat instead of dateformat ([#1075](https://github.com/ItsJoseph470/conventional-changelog/issues/1075)) ([77c41e9](https://github.com/ItsJoseph470/conventional-changelog/commit/77c41e93fe66c2287aad2c266dda91ebf978882a))
+* use utils from simple-libs ([#1432](https://github.com/ItsJoseph470/conventional-changelog/issues/1432)) ([7d27d06](https://github.com/ItsJoseph470/conventional-changelog/commit/7d27d0673878b995e9c0c82641d9d70eb9561024))
+
+### Bug Fixes
+
+* align split2 package between packages ([#1084](https://github.com/ItsJoseph470/conventional-changelog/issues/1084)) ([bf28e5f](https://github.com/ItsJoseph470/conventional-changelog/commit/bf28e5f9e1678833356e6b58ddebfb7d6ceb6f1d))
+* fix modification prevention for Date objects ([#1285](https://github.com/ItsJoseph470/conventional-changelog/issues/1285)) ([56a5f3c](https://github.com/ItsJoseph470/conventional-changelog/commit/56a5f3cbbab72d8bb1f19aa697927a8f24490812))
+* fix semver vulnerability ([#1071](https://github.com/ItsJoseph470/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/ItsJoseph470/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/ItsJoseph470/conventional-changelog/issues/1019)
+* fix transform async handlers ([#1146](https://github.com/ItsJoseph470/conventional-changelog/issues/1146)) ([be3901b](https://github.com/ItsJoseph470/conventional-changelog/commit/be3901bc66e44f938c4a9634b697a0c79841635a))
+* move `@types/semver` to dev dependencies ([#1268](https://github.com/ItsJoseph470/conventional-changelog/issues/1268)) ([4ca2b86](https://github.com/ItsJoseph470/conventional-changelog/commit/4ca2b86ebe22f312ebc492eead0ad859e519f43b))
+* pass commit deep copy to writer transformer ([#1044](https://github.com/ItsJoseph470/conventional-changelog/issues/1044)) ([208ffdb](https://github.com/ItsJoseph470/conventional-changelog/commit/208ffdb246b6acf4f016c6ca6e02b2e347c6bd67)), closes [#1043](https://github.com/ItsJoseph470/conventional-changelog/issues/1043)
+* point package homepages and docs to documentation website ([04796e2](https://github.com/ItsJoseph470/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* update dependency meow to v13 ([#1190](https://github.com/ItsJoseph470/conventional-changelog/issues/1190)) ([862f66b](https://github.com/ItsJoseph470/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+* update dependency semver to v7 [security] ([#1021](https://github.com/ItsJoseph470/conventional-changelog/issues/1021)) ([31fa409](https://github.com/ItsJoseph470/conventional-changelog/commit/31fa409e446a51a5a23e2217997d04364b89c1dd))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/ItsJoseph470/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/ItsJoseph470/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+
 ## [9.2.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v9.1.1...conventional-changelog-writer-v9.2.0) (2026-07-09)
 
 ### Features
